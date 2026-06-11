@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { getPlantImage } from '../utils/plantImages';
 
 export default function PlantCard({ plant }) {
   const stars = Math.round(plant.rating?.average || 0);
@@ -34,8 +35,8 @@ export default function PlantCard({ plant }) {
     >
       <Link to={`/plants/${plant._id}`} className="block">
         <div className="aspect-[4/3] bg-gradient-to-br from-surface-lighter to-surface-light flex items-center justify-center overflow-hidden relative">
-          {plant.image ? (
-            <img src={plant.image} alt={plant.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          {(() => { const imgSrc = plant.image || getPlantImage(plant); return imgSrc ? (
+            <img src={imgSrc} alt={plant.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
           ) : (
             <div className="flex flex-col items-center gap-2">
               <svg className="w-16 h-16 text-stone/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +44,7 @@ export default function PlantCard({ plant }) {
               </svg>
               <span className="text-stone-dark text-xs uppercase tracking-wider">{plant.category}</span>
             </div>
-          )}
+          )})()}
           <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           {plant.stock <= 5 && plant.stock > 0 && (
             <span className="absolute top-3 left-3 bg-clay/90 text-ivory text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider font-medium">

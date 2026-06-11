@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { getPlantImage } from '../utils/plantImages';
 
 export default function Cart() {
   const { cart, loading, updateItem, removeItem, getCartTotal } = useCart();
@@ -47,13 +48,13 @@ export default function Cart() {
             return (
               <div key={item._id} className="bg-surface rounded-2xl border border-surface-light p-5 flex items-center gap-6">
                 <div className="w-20 h-20 bg-surface-lighter rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden">
-                  {plant.image ? (
-                    <img src={plant.image} alt={plant.name} className="w-full h-full object-cover" />
+                  {(() => { const imgSrc = plant.image || getPlantImage(plant); return imgSrc ? (
+                    <img src={imgSrc} alt={plant.name} className="w-full h-full object-cover" />
                   ) : (
                     <svg className="w-8 h-8 text-stone/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
-                  )}
+                  )})()}
                 </div>
 
                 <div className="flex-1 min-w-0">
