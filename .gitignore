@@ -5,3 +5,4 @@ frontend/build/
 .DS_Store
 .agents
 plans.md
+skills-lock.json
