@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import fs from 'fs';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
 import plantRoutes from './routes/plants.js';
@@ -31,9 +32,9 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payment', paymentRoutes);
 app.use('/api/admin', adminRoutes);
 
-// Serve frontend in production
+// Serve frontend build if it exists (optional — frontend may be on Vercel)
 const buildDir = path.join(__dirname, '../frontend/build');
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && fs.existsSync(buildDir)) {
   app.use('/static', express.static(path.join(buildDir, 'static')));
   app.use((req, res, next) => {
     if (req.path.startsWith('/api')) return next();
