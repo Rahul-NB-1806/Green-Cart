@@ -24,6 +24,17 @@ const fallbackPlants = [
   { _id: "18", name: "Orchid", price: 999, category: "flowering", image: "", description: "Exotic moth orchid with long-lasting blooms.", rating: { average: 4.7, count: 58 }, stock: 7 },
   { _id: "19", name: "Neem Plant", price: 399, category: "medicinal", image: "", description: "Natural antibacterial with mosquito-repelling properties.", rating: { average: 4.6, count: 63 }, stock: 15 },
   { _id: "20", name: "String of Pearls", price: 399, category: "succulent", image: "", description: "Unique trailing succulent with bead-like leaves.", rating: { average: 4.7, count: 56 }, stock: 14 },
+  { _id: "21", name: "Fiddle Leaf Fig", price: 1299, category: "indoor", image: "", description: "Trendy houseplant with large, violin-shaped leaves.", rating: { average: 4.1, count: 36 }, stock: 8 },
+  { _id: "22", name: "Money Plant (Pothos)", price: 299, category: "indoor", image: "", description: "Easy-to-grow trailing plant that brings positive energy.", rating: { average: 4.5, count: 112 }, stock: 40 },
+  { _id: "23", name: "Marigold", price: 149, category: "flowering", image: "", description: "Vibrant orange and yellow flowers. Natural pest repellent.", rating: { average: 4.0, count: 29 }, stock: 50 },
+  { _id: "24", name: "Cactus Mix", price: 199, category: "succulent", image: "", description: "Cute, low-maintenance desert plant that thrives on neglect.", rating: { average: 4.1, count: 34 }, stock: 45 },
+  { _id: "25", name: "Boston Fern", price: 399, category: "indoor", image: "", description: "Lush, feathery fern that loves humidity.", rating: { average: 4.2, count: 39 }, stock: 12 },
+  { _id: "26", name: "Rubber Plant", price: 649, category: "indoor", image: "", description: "Bold plant with large glossy burgundy leaves.", rating: { average: 4.3, count: 44 }, stock: 14 },
+  { _id: "27", name: "Jasmine (Mogra)", price: 299, category: "outdoor", image: "", description: "Fragrant white flowers that fill your garden with enchanting scent.", rating: { average: 4.6, count: 81 }, stock: 28 },
+  { _id: "28", name: "Giloy (Guduchi)", price: 249, category: "medicinal", image: "", description: "Immunity-boosting Ayurvedic creeper with powerful antiviral properties.", rating: { average: 4.4, count: 38 }, stock: 18 },
+  { _id: "29", name: "Dahlia", price: 349, category: "flowering", image: "", description: "Show-stopping blooms in a rainbow of colors.", rating: { average: 4.3, count: 35 }, stock: 12 },
+  { _id: "30", name: "Sunflower", price: 149, category: "flowering", image: "", description: "Cheerful annual with massive golden flower heads.", rating: { average: 4.1, count: 27 }, stock: 50 },
+  { _id: "31", name: "Turmeric Plant", price: 299, category: "medicinal", image: "", description: "Golden spice plant with powerful anti-inflammatory properties.", rating: { average: 4.4, count: 33 }, stock: 15 },
 ];
 
 function filterPlants(list, category) {

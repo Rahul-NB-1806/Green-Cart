@@ -23,11 +23,15 @@ export const getPlants = async (req, res) => {
 // @desc    Get single plant
 // @route   GET /api/plants/:id
 export const getPlantById = async (req, res) => {
-  const plant = await Plant.findById(req.params.id);
-  if (plant) {
-    res.json(plant);
-  } else {
-    res.status(404).json({ message: 'Plant not found' });
+  try {
+    const plant = await Plant.findById(req.params.id);
+    if (plant) {
+      res.json(plant);
+    } else {
+      res.status(404).json({ message: 'Plant not found' });
+    }
+  } catch {
+    res.status(400).json({ message: 'Invalid plant ID' });
   }
 };
 

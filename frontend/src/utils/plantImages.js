@@ -18,6 +18,17 @@ import jadePlant from '../image/jade plant.png';
 import neemPlant from '../image/neem plant.png';
 import philodendronBrasil from '../image/philodendron brasil.png';
 import snakePlant from '../image/snake plant.png';
+import fiddleLeafFig from '../image/Fiddle Leaf Fig.png';
+import moneyPlant from '../image/Money Plant (Pothos).png';
+import marigold from '../image/Marigold.png';
+import cactusMix from '../image/Cactus Mix.png';
+import bostonFern from '../image/Boston Fern.png';
+import rubberPlant from '../image/rubber plant.png';
+import jasmine from '../image/jasmin(mogra).png';
+import giloy from '../image/giloy(guduchi).png';
+import dahlia from '../image/Dahila.png';
+import sunflower from '../image/sunflower.png';
+import turmericPlant from '../image/turmeric plant.png';
 
 const imageMap = [
   { name: 'Aloe Vera', src: aloeVera },
@@ -40,6 +51,17 @@ const imageMap = [
   { name: 'String of Pearls', src: stringOfPearls },
   { name: 'Tulsi', src: tulsi },
   { name: 'ZZ Plant', src: zzPlant },
+  { name: 'Fiddle Leaf Fig', src: fiddleLeafFig },
+  { name: 'Money Plant (Pothos)', src: moneyPlant },
+  { name: 'Marigold', src: marigold },
+  { name: 'Cactus Mix', src: cactusMix },
+  { name: 'Boston Fern', src: bostonFern },
+  { name: 'Rubber Plant', src: rubberPlant },
+  { name: 'Jasmine (Mogra)', src: jasmine },
+  { name: 'Giloy (Guduchi)', src: giloy },
+  { name: 'Dahlia', src: dahlia },
+  { name: 'Sunflower', src: sunflower },
+  { name: 'Turmeric Plant', src: turmericPlant },
 ];
 
 export function getPlantImage(plant) {

@@ -24,7 +24,9 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  useEffect(() => { loadUser(); }, [loadUser]);
+  useEffect(() => {
+    loadUser();
+  }, [loadUser]);
 
   const login = async (email, password) => {
     const { data } = await loginUser({ email, password });

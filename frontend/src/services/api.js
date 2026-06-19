@@ -12,11 +12,26 @@ API.interceptors.request.use((config) => {
   return config;
 });
 
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token');
+      if (error.config.url?.includes('/auth/profile')) {
+        return Promise.resolve({ data: null });
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
 // Auth
 export const registerUser = (data) => API.post('/auth/register', data);
 export const loginUser = (data) => API.post('/auth/login', data);
 export const getProfile = () => API.get('/auth/profile');
 export const updateProfile = (data) => API.put('/auth/profile', data);
+export const forgotPassword = (email) => API.post('/auth/forgot-password', { email });
+export const resetPassword = (token, password) => API.put(`/auth/reset-password/${token}`, { password });
 
 // Plants
 export const getPlants = (params) => API.get('/plants', { params });
