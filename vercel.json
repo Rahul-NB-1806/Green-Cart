@@ -1,5 +1,3 @@
 {
-  "rootDirectory": "frontend",
-  "buildCommand": "npm run build:css && DISABLE_ESLINT_PLUGIN=true CI= react-scripts build",
-  "framework": "create-react-app"
+  "buildCommand": "npm run build:css && DISABLE_ESLINT_PLUGIN=true CI= react-scripts build"
 }
