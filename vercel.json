@@ -1,4 +1,3 @@
 {
-  "buildCommand": "DISABLE_ESLINT_PLUGIN=true CI= npm run build",
-  "nodeVersion": "20.x"
+  "buildCommand": "DISABLE_ESLINT_PLUGIN=true CI= npm run build"
 }
